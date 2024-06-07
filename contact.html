@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.1.2/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<!-- Header -->
+<header class="bg-blue-600 text-white p-4">
+    <div class="container mx-auto flex justify-between items-center">
+        <h1 class="text-xl font-bold">Scorch Squad FF</h1>
+        <nav>
+            <a href="index.html" class="ml-4">Home</a>
+            <a href="videos.html" class="ml-4">Videos</a>
+            <a href="about.html" class="ml-4">About</a>
+            <a href="contact.html" class="ml-4">Contact </a>
+        </nav>
+    </div>
+</header>
+<body class="bg-black">
+    <div class="bg-[url('/src/assets/ff.gif')] bg-cover bg-center h-screen">
+        <div class="max-w-md mx-auto bg-blue-200 p-5 rounded-md shadow-md">
+            <h2 class="text-2xl font-semibold text-blue-600 mb-5">Contact Us</h2>
+            <form action="#" method="POST">
+                <div class="mb-4">
+                    <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Name:</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your name" class="border border-gray-300 p-2 w-full rounded-md focus:outline-none focus:border-blue-500">
+                </div>
+                <div class="mb-4">
+                    <label for="email" class="block text-gray-700 text-sm font-bold mb-2">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" class="border border-gray-300 p-2 w-full rounded-md focus:outline-none focus:border-blue-500">
+                </div>
+                <div class="mb-4">
+                    <label for="message" class="block text-gray-700 text-sm font-bold mb-2">Message:</label>
+                    <textarea id="message" name="message" rows="4" placeholder="Enter your message" class="border border-gray-300 p-2 w-full rounded-md focus:outline-none focus:border-blue-500"></textarea>
+                </div>
+                <div class="mb-4">
+                    <button type="submit" class="bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
