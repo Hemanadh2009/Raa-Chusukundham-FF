@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Scorch Squad FF</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <style>
         .bg-gift {
@@ -65,29 +65,75 @@
 
     <main class="container mx-auto px-6 py-6">
         <h2 class="text-2xl font-semibold text-gray-800">Contact Form</h2>
+        
+        <!-- Filter Dropdown -->
+        <div class="mb-4">
+            <label class="block text-gray-700">Select Type</label>
+            <select id="contact-type" class="w-full border rounded-lg py-2 px-4 text-gray-700 focus:outline-none focus:border-blue-500">
+                <option value="feedback">Feedback</option>
+                <option value="room">Room</option>
+            </select>
+        </div>
+
+        <!-- Contact Form -->
         <form id="contact-form" class="mt-4">
-            <div class="flex -mx-2 mb-4">
-                <div class="w-1/2 px-2">
-                    <label class="block text-gray-700">First Name</label>
-                    <input type="text" name="first_name" class="w-full border rounded-lg py-2 px-4 text-gray-700 focus:outline-none focus:border-blue-500" placeholder="First Name" required>
+            <!-- Feedback Fields -->
+            <div id="feedback-fields">
+                <div class="flex -mx-2 mb-4">
+                    <div class="w-1/2 px-2">
+                        <label class="block text-gray-700">First Name</label>
+                        <input type="text" name="first_name" class="w-full border rounded-lg py-2 px-4 text-gray-700 focus:outline-none focus:border-blue-500" placeholder="First Name" required>
+                    </div>
+                    <div class="w-1/2 px-2">
+                        <label class="block text-gray-700">Last Name</label>
+                        <input type="text" name="last_name" class="w-full border rounded-lg py-2 px-4 text-gray-700 focus:outline-none focus:border-blue-500" placeholder="Last Name" required>
+                    </div>
                 </div>
-                <div class="w-1/2 px-2">
-                    <label class="block text-gray-700">Last Name</label>
-                    <input type="text" name="last_name" class="w-full border rounded-lg py-2 px-4 text-gray-700 focus:outline-none focus:border-blue-500" placeholder="Last Name" required>
+                <div class="mb-4">
+                    <label class="block text-gray-700">Email</label>
+                    <input type="email" name="email" class="w-full border rounded-lg py-2 px-4 text-gray-700 focus:outline-none focus:border-blue-500" placeholder="Email" required>
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-700">Message</label>
+                    <textarea name="message" class="w-full border rounded-lg py-2 px-4 text-gray-700 focus:outline-none focus:border-blue-500" placeholder="Your message" required></textarea>
                 </div>
             </div>
-            <div class="mb-4">
-                <label class="block text-gray-700">Email</label>
-                <input type="email" name="email" class="w-full border rounded-lg py-2 px-4 text-gray-700 focus:outline-none focus:border-blue-500" placeholder="Email" required>
+            
+            <!-- Room Fields -->
+            <div id="room-fields" class="hidden">
+                <div class="mb-4">
+                    <label class="block text-gray-700">In-game Username</label>
+                    <input type="text" name="username" class="w-full border rounded-lg py-2 px-4 text-gray-700 focus:outline-none focus:border-blue-500" placeholder="In-game Username">
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-700">Email</label>
+                    <input type="email" name="email" class="w-full border rounded-lg py-2 px-4 text-gray-700 focus:outline-none focus:border-blue-500" placeholder="Email" required>
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-700">User UID</label>
+                    <input type="text" id="uid" name="uid" maxlength="10" class="w-full border rounded-lg py-2 px-4 text-gray-700 focus:outline-none focus:border-blue-500" placeholder="User UID">
+                </div>
+                <div id="uid-error" class="text-red-600"></div>                
+                <div class="mb-4">
+                    <label class="block text-gray-700">Level</label>
+                    <input type="number" name="level" class="w-full border rounded-lg py-2 px-4 text-gray-700 focus:outline-none focus:border-blue-500" placeholder="Level">
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-700">Match Type</label>
+                    <select name="match_type" class="w-full border rounded-lg py-2 px-4 text-gray-700 focus:outline-none focus:border-blue-500">
+                        <option value="1v1">Choose Type</option>
+                        <option value="1v1">1v1</option>
+                        <option value="1v2">1v2</option>
+                        <option value="2v2">2v2</option>
+                        <option value="4v4">4v4</option>
+                    </select>
+                </div>
             </div>
-            <div class="mb-4">
-                <label class="block text-gray-700">Message</label>
-                <textarea name="message" class="w-full border rounded-lg py-2 px-4 text-gray-700 focus:outline-none focus:border-blue-500" placeholder="Your message" required></textarea>
-            </div>
-            <button type="submit" id="submit-btn" class="bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-500">Send feedback</button>
+
+            <button type="submit" id="submit-btn" class="bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-500">Send Request</button>
         </form>
         <div id="thank-you-message" class="text-center">
-            <div>Thank you for your feedback</div>
+            <div>We will contact you soon</div>
             <button type="button" id="done-btn" class="bg-green-600 text-white py-2 px-4 rounded-lg hover:bg-green-500 mt-4">Done</button>
         </div>
     </main>
@@ -116,6 +162,19 @@
         document.getElementById('done-btn').addEventListener('click', function() {
             // Hide the thank you message
             document.getElementById('thank-you-message').classList.remove('visible');
+        });
+
+        document.getElementById('contact-type').addEventListener('change', function() {
+            var feedbackFields = document.getElementById('feedback-fields');
+            var roomFields = document.getElementById('room-fields');
+            
+            if (this.value === 'feedback') {
+                feedbackFields.classList.remove('hidden');
+                roomFields.classList.add('hidden');
+            } else {
+                feedbackFields.classList.add('hidden');
+                roomFields.classList.remove('hidden');
+            }
         });
     </script>
     
