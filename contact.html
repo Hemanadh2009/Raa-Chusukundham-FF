@@ -40,6 +40,14 @@
         #thank-you-message.visible {
             visibility: visible;
         }
+        #contact-form {
+            background-color: rgba(255, 255, 255, 0.8); /* Add transparency to form background */
+            padding: 2rem;
+            border-radius: 0.5rem;
+        }
+        #contact-form input, #contact-form textarea, #contact-form select {
+            background-color: rgba(255, 255, 255, 0.7); /* Add transparency to form fields */
+        }
     </style>
     <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
     <script>
@@ -76,7 +84,7 @@
         </div>
 
         <!-- Contact Form -->
-        <form id="contact-form" class="mt-4">
+        <form id="contact-form" class="mt-4" action="Contact">
             <!-- Feedback Fields -->
             <div id="feedback-fields">
                 <div class="flex -mx-2 mb-4">
