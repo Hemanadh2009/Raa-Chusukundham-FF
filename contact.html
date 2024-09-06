@@ -5,58 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Scorch Squad FF</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <style>
-        .bg-gift {
-            background-image: url('./assets/ff1.gif'); /* Replace with your image URL */
-            background-size: cover;
-            background-position: center;
-        }
-        html, body {
-            height: 100%;
-            margin: 0;
-            display: flex;
-            flex-direction: column;
-        }
-        main {
-            flex: 1;
-        }
-        #thank-you-message {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            background-color: rgba(0, 0, 0, 0.5);
-            color: white;
-            font-size: 2rem;
-            font-weight: bold;
-            z-index: 1000;
-            visibility: hidden;
-        }
-        #thank-you-message.visible {
-            visibility: visible;
-        }
-        #contact-form {
-            background-color: rgba(255, 255, 255, 0.8); /* Add transparency to form background */
-            padding: 2rem;
-            border-radius: 0.5rem;
-        }
-        #contact-form input, #contact-form textarea, #contact-form select {
-            background-color: rgba(255, 255, 255, 0.7); /* Add transparency to form fields */
-        }
-    </style>
-    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-    <script>
-        (function() {
-            emailjs.init("YOUR_USER_ID"); // Replace 'YOUR_USER_ID' with your EmailJS user ID
-        })();
-    </script>
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init({
+        publicKey: "W-5b04Xdb7zDRTkgf",
+      });
+   })();
+</script>
 </head>
-<body>
+<body class="bg-gift bg-gray-100">
     <header class="bg-blue-600 bg-opacity-100 text-white p-8">
         <div class="container mx-auto flex flex-col md:flex-row items-center justify-between">
             <h1 class="text-xl font-bold">Scorch Squad FF</h1>
@@ -77,33 +39,33 @@
         <!-- Filter Dropdown -->
         <div class="mb-4">
             <label class="block text-gray-700">Select Type</label>
-            <select id="contact-type" class="w-full border rounded-lg py-2 px-4 text-gray-700 focus:outline-none focus:border-blue-500">
+            <select id="contact-type" class="w-full border rounded-lg py-2 px-4 text-gray-700 focus:outline-none focus:border-blue-500" onchange="toggleFormFields()">
                 <option value="feedback">Feedback</option>
                 <option value="room">Room</option>
             </select>
         </div>
 
         <!-- Contact Form -->
-        <form id="contact-form" class="mt-4" action="Contact">
+        <form id="contact-form" class="mt-4">
             <!-- Feedback Fields -->
             <div id="feedback-fields">
                 <div class="flex -mx-2 mb-4">
                     <div class="w-1/2 px-2">
                         <label class="block text-gray-700">First Name</label>
-                        <input type="text" name="first_name" class="w-full border rounded-lg py-2 px-4 text-gray-700 focus:outline-none focus:border-blue-500" placeholder="First Name" required>
+                        <input type="text" name="first_name" id="first_name" class="w-full border rounded-lg py-2 px-4 text-gray-700 focus:outline-none focus:border-blue-500" placeholder="First Name" required>
                     </div>
                     <div class="w-1/2 px-2">
                         <label class="block text-gray-700">Last Name</label>
-                        <input type="text" name="last_name" class="w-full border rounded-lg py-2 px-4 text-gray-700 focus:outline-none focus:border-blue-500" placeholder="Last Name" required>
+                        <input type="text" name="last_name" id="last_name" class="w-full border rounded-lg py-2 px-4 text-gray-700 focus:outline-none focus:border-blue-500" placeholder="Last Name" required>
                     </div>
                 </div>
                 <div class="mb-4">
                     <label class="block text-gray-700">Email</label>
-                    <input type="email" name="email" class="w-full border rounded-lg py-2 px-4 text-gray-700 focus:outline-none focus:border-blue-500" placeholder="Email" required>
+                    <input type="email" name="email" id="email" class="w-full border rounded-lg py-2 px-4 text-gray-700 focus:outline-none focus:border-blue-500" placeholder="Email" required>
                 </div>
                 <div class="mb-4">
                     <label class="block text-gray-700">Message</label>
-                    <textarea name="message" class="w-full border rounded-lg py-2 px-4 text-gray-700 focus:outline-none focus:border-blue-500" placeholder="Your message" required></textarea>
+                    <textarea name="message" id="message" class="w-full border rounded-lg py-2 px-4 text-gray-700 focus:outline-none focus:border-blue-500" placeholder="Your message" required></textarea>
                 </div>
             </div>
             
@@ -111,11 +73,11 @@
             <div id="room-fields" class="hidden">
                 <div class="mb-4">
                     <label class="block text-gray-700">In-game Username</label>
-                    <input type="text" name="username" class="w-full border rounded-lg py-2 px-4 text-gray-700 focus:outline-none focus:border-blue-500" placeholder="In-game Username">
+                    <input type="text" name="username" id="username" class="w-full border rounded-lg py-2 px-4 text-gray-700 focus:outline-none focus:border-blue-500" placeholder="In-game Username">
                 </div>
                 <div class="mb-4">
                     <label class="block text-gray-700">Email</label>
-                    <input type="email" name="email" class="w-full border rounded-lg py-2 px-4 text-gray-700 focus:outline-none focus:border-blue-500" placeholder="Email" required>
+                    <input type="email" name="room_email" id="room_email" class="w-full border rounded-lg py-2 px-4 text-gray-700 focus:outline-none focus:border-blue-500" placeholder="Email" required>
                 </div>
                 <div class="mb-4">
                     <label class="block text-gray-700">User UID</label>
@@ -124,12 +86,12 @@
                 <div id="uid-error" class="text-red-600"></div>                
                 <div class="mb-4">
                     <label class="block text-gray-700">Level</label>
-                    <input type="number" name="level" class="w-full border rounded-lg py-2 px-4 text-gray-700 focus:outline-none focus:border-blue-500" placeholder="Level">
+                    <input type="number" name="level" id="level" class="w-full border rounded-lg py-2 px-4 text-gray-700 focus:outline-none focus:border-blue-500" placeholder="Level">
                 </div>
                 <div class="mb-4">
                     <label class="block text-gray-700">Match Type</label>
-                    <select name="match_type" class="w-full border rounded-lg py-2 px-4 text-gray-700 focus:outline-none focus:border-blue-500">
-                        <option value="1v1">Choose Type</option>
+                    <select name="match_type" id="match_type" class="w-full border rounded-lg py-2 px-4 text-gray-700 focus:outline-none focus:border-blue-500">
+                        <option value="">Choose Type</option>
                         <option value="1v1">1v1</option>
                         <option value="1v2">1v2</option>
                         <option value="2v2">2v2</option>
@@ -138,53 +100,53 @@
                 </div>
             </div>
 
-            <button type="submit" id="submit-btn" class="bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-500">Send Request</button>
-        </form>
-        <div id="thank-you-message" class="text-center">
+            <button type="button" onclick="sendEmail()" id="submit-btn" class="bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-500">Send Request</button>
+        </form>       
+        <div id="thank-you-message" class="text-center hidden">
             <div>We will contact you soon</div>
             <button type="button" id="done-btn" class="bg-green-600 text-white py-2 px-4 rounded-lg hover:bg-green-500 mt-4">Done</button>
         </div>
     </main>
-    
-    <footer class="bg-gray-800 text-white p-4">
-        <div class="container mx-auto text-center">
-            <p>&copy; 2024 Scorch Squad FF. All rights reserved.</p>
-        </div>
-    </footer>
-    
+
     <script>
-        document.getElementById('contact-form').addEventListener('submit', function(event) {
-            event.preventDefault(); // Prevent the form from submitting normally
-    
-            // Show the thank you message immediately
-            document.getElementById('thank-you-message').classList.add('visible');
-    
-            emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', this)
-                .then(function() {
-                    // Form submitted successfully, no additional action needed
+        function toggleFormFields() {
+            const selectedType = document.getElementById('contact-type').value;
+            document.getElementById('feedback-fields').classList.toggle('hidden', selectedType !== 'feedback');
+            document.getElementById('room-fields').classList.toggle('hidden', selectedType !== 'room');
+        }
+
+        function sendEmail() {
+            const selectedType = document.getElementById('contact-type').value;
+            let formData;
+
+            if (selectedType === 'feedback') {
+                // Collect data for Feedback
+                formData = {
+                    first_name: document.getElementById('first_name').value,
+                    last_name: document.getElementById('last_name').value,
+                    email: document.getElementById('email').value,
+                    message: document.getElementById('message').value
+                };
+            } else {
+                // Collect data for Room
+                formData = {
+                    username: document.getElementById('username').value,
+                    room_email: document.getElementById('room_email').value,
+                    uid: document.getElementById('uid').value,
+                    level: document.getElementById('level').value,
+                    match_type: document.getElementById('match_type').value
+                };
+            }
+
+            // Send the email using EmailJS
+            emailjs.send('service_o4w6ktr', 'template_o9escnd', formData)
+                .then(function(response) {
+                    console.log('SUCCESS!', response.status, response.text);
+                    document.getElementById('thank-you-message').classList.remove('hidden');
                 }, function(error) {
                     console.log('FAILED...', error);
                 });
-        });
-    
-        document.getElementById('done-btn').addEventListener('click', function() {
-            // Hide the thank you message
-            document.getElementById('thank-you-message').classList.remove('visible');
-        });
-
-        document.getElementById('contact-type').addEventListener('change', function() {
-            var feedbackFields = document.getElementById('feedback-fields');
-            var roomFields = document.getElementById('room-fields');
-            
-            if (this.value === 'feedback') {
-                feedbackFields.classList.remove('hidden');
-                roomFields.classList.add('hidden');
-            } else {
-                feedbackFields.classList.add('hidden');
-                roomFields.classList.remove('hidden');
-            }
-        });
+        }
     </script>
-    
 </body>
 </html>
