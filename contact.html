@@ -9,14 +9,29 @@
     <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
     <script type="text/javascript"
         src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
-</script>
-<script type="text/javascript">
-   (function(){
-      emailjs.init({
-        publicKey: "W-5b04Xdb7zDRTkgf",
-      });
-   })();
-</script>
+    </script>
+    <script type="text/javascript">
+       (function(){
+          emailjs.init({
+            publicKey: "W-5b04Xdb7zDRTkgf",
+          });
+       })();
+    </script>
+    <style>
+        .loader {
+            border-top-color: #3498db; /* Spinner color */
+            animation: spin 1s infinite linear;
+        }
+
+        @keyframes spin {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
 </head>
 <body class="bg-gift bg-gray-100">
     <header class="bg-blue-600 bg-opacity-100 text-white p-8">
@@ -101,10 +116,20 @@
 
             <button type="button" onclick="sendEmail()" id="submit-btn" class="bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-500">Send Request</button>
         </form>       
-        <div id="thank-you-message" class="text-center hidden">
-            <div>We will contact you soon</div>
-            <button type="button" id="done-btn" class="bg-green-600 text-white py-2 px-4 rounded-lg hover:bg-green-500 mt-4">Done</button>
+        
+        <!-- Loading Spinner -->
+        <div id="loading-spinner" class="fixed inset-0 flex items-center justify-center bg-white bg-opacity-75 hidden">
+            <div class="loader ease-linear rounded-full border-4 border-t-4 border-gray-200 h-12 w-12"></div>
         </div>
+
+        <!-- Thank You Message -->
+        <div id="thank-you-message" class="fixed inset-0 flex items-center justify-center bg-white bg-opacity-75 hidden">
+            <div class="text-center">
+                <div class="text-2xl font-semibold text-gray-800">We will contact you soon</div>
+                <button type="button" id="done-btn" onclick="redirectToHome()" class="bg-green-600 text-white py-2 px-4 rounded-lg hover:bg-green-500 mt-4">Done</button>
+            </div>
+        </div>
+        
     </main>
 
     <script>
@@ -117,6 +142,9 @@
         function sendEmail() {
             const selectedType = document.getElementById('contact-type').value;
             let formData;
+
+            // Show loading spinner
+            document.getElementById('loading-spinner').classList.remove('hidden');
 
             if (selectedType === 'feedback') {
                 // Collect data for Feedback
@@ -141,10 +169,16 @@
             emailjs.send('service_o4w6ktr', 'template_o9escnd', formData)
                 .then(function(response) {
                     console.log('SUCCESS!', response.status, response.text);
-                    document.getElementById('thank-you-message').classList.remove('hidden');
+                    document.getElementById('loading-spinner').classList.add('hidden'); // Hide loading spinner
+                    document.getElementById('thank-you-message').classList.remove('hidden'); // Show thank you message
                 }, function(error) {
                     console.log('FAILED...', error);
+                    document.getElementById('loading-spinner').classList.add('hidden'); // Hide loading spinner
                 });
+        }
+
+        function redirectToHome() {
+            window.location.href = 'index.html';
         }
     </script>
 </body>
