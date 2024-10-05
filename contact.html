@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Scorch Squad FF</title>
+    <title>Ra Chusukundham FF</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <!-- EmailJS SDK -->
     <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
@@ -20,7 +20,17 @@
     <style>
         .loader {
             border-top-color: #3498db; /* Spinner color */
+            border-right-color: transparent;
+            border-bottom-color: transparent;
+            border-left-color: #3498db;
             animation: spin 1s infinite linear;
+            border-radius: 50%;
+        }
+
+        .loader-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         @keyframes spin {
@@ -31,12 +41,25 @@
                 transform: rotate(360deg);
             }
         }
+
+        .pulse {
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.5;
+            }
+        }
     </style>
 </head>
 <body class="bg-gift bg-gray-100">
     <header class="bg-blue-600 bg-opacity-100 text-white p-8">
         <div class="container mx-auto flex flex-col md:flex-row items-center justify-between">
-            <h1 class="text-xl font-bold">Scorch Squad FF</h1>
+            <h1 class="text-xl font-bold">Ra Chusukundham FF</h1>
             <nav class="flex-grow">
                 <div class="flex justify-center space-x-4">
                     <a href="index.html" class="text-white">Home</a>
@@ -116,10 +139,12 @@
 
             <button type="button" onclick="sendEmail()" id="submit-btn" class="bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-500">Send Request</button>
         </form>       
-        
         <!-- Loading Spinner -->
         <div id="loading-spinner" class="fixed inset-0 flex items-center justify-center bg-white bg-opacity-75 hidden">
-            <div class="loader ease-linear rounded-full border-4 border-t-4 border-gray-200 h-12 w-12"></div>
+            <div class="loader-wrapper">
+                <div class="loader border-4 border-t-4 border-gray-200 h-12 w-12"></div>
+                <div class="mt-4 text-lg font-semibold text-gray-800 pulse">Sending Request...</div>
+            </div>
         </div>
 
         <!-- Thank You Message -->
@@ -181,5 +206,10 @@
             window.location.href = 'index.html';
         }
     </script>
+    <footer class="bg-gray-800 text-white p-4"></footer>
+        <div class="container mx-auto text-center">
+            <p>&copy; 2024 RA CHUSUKUNDHAM FF. All rights reserved.</p>
+        </div>
+    </footer>
 </body>
 </html>
