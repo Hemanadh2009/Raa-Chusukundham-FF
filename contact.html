@@ -3,15 +3,94 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ra Chusukundham FF</title>
+    <title>Ra Chusukundham FF - Contact</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
-    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    
     <script>
-        (function() {
-            emailjs.init("p-K47Q8nZPXN5sSMT");  // Initialize with your EmailJS user ID
-        })();
+        document.addEventListener("DOMContentLoaded", function() {
+            emailjs.init("Uxj43pkvZwkvd4n1G");  // Initialize with your EmailJS User ID
+        });
+
+        function toggleFormFields() {
+            const selectedType = document.getElementById('contact-type').value;
+            document.getElementById('feedback-fields').classList.toggle('hidden', selectedType !== 'feedback');
+            document.getElementById('room-fields').classList.toggle('hidden', selectedType !== 'room');
+        }
+
+        function sendFeedback() {
+            const formData = {
+                first_name: document.getElementById('first_name').value,
+                last_name: document.getElementById('last_name').value,
+                email: document.getElementById('email').value,
+                message: document.getElementById('message').value
+            };
+
+            if (!formData.first_name || !formData.last_name || !formData.email || !formData.message) {
+                showMessage("Please fill in all fields before submitting.", "error");
+                return;
+            }
+
+            document.getElementById('loading-spinner').classList.remove('hidden'); // Show loading spinner
+
+            emailjs.send("service_rz8q515", "template_o9escnd", formData)
+                .then(function(response) {
+                    console.log("SUCCESS!", response.status, response.text);
+                    document.getElementById('loading-spinner').classList.add('hidden'); // Hide loading spinner
+                    showMessage("Feedback sent successfully! Thank you.", "success");
+                })
+                .catch(function(error) {
+                    console.error("FAILED...", error);
+                    document.getElementById('loading-spinner').classList.add('hidden'); // Hide loading spinner
+                    showMessage("Error Sending Feedback", "error");
+                });
+        }
+
+        function sendRoomRequest() {
+            const formData = {
+                username: document.getElementById('username').value,
+                room_email: document.getElementById('room_email').value,
+                uid: document.getElementById('uid').value,
+                match_type: document.getElementById('match_type').value
+            };
+
+            if (!formData.username || !formData.room_email || !formData.uid) {
+                showMessage("Please fill in all fields before submitting.", "error");
+                return;
+            }
+
+            document.getElementById('loading-spinner').classList.remove('hidden'); // Show loading spinner
+
+            emailjs.send("service_rz8q515", "template_o9escnd", formData)
+                .then(function(response) {
+                    console.log("SUCCESS!", response.status, response.text);
+                    document.getElementById('loading-spinner').classList.add('hidden'); // Hide loading spinner
+                    showMessage("Room request sent successfully! Thank you.", "success");
+                })
+                .catch(function(error) {
+                    console.error("FAILED...", error);
+                    document.getElementById('loading-spinner').classList.add('hidden'); // Hide loading spinner
+                    showMessage("Error Sending Room Request", "error");
+                });
+        }
+
+        function showMessage(message, type) {
+            const messageContainer = document.getElementById('message-container');
+            messageContainer.textContent = message;
+            messageContainer.classList.remove('hidden');
+            messageContainer.className = "p-4 rounded-lg text-center mt-4";
+
+            if (type === "success") {
+                messageContainer.classList.add("bg-green-100", "text-green-700");
+            } else {
+                messageContainer.classList.add("bg-red-100", "text-red-700");
+            }
+
+            setTimeout(() => messageContainer.classList.add('hidden'), 5000);
+        }
     </script>
+
     <style>
         body {
             font-family: 'Inter', sans-serif;
@@ -26,13 +105,6 @@
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
         }
-        .animate-fade-in {
-            animation: fade-in 0.5s ease-in-out;
-        }
-        @keyframes fade-in {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
         .glassmorphism {
             background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(10px);
@@ -41,148 +113,58 @@
         }
     </style>
 </head>
+
 <body class="bg-gradient-to-br from-gray-50 to-blue-50 text-gray-900">
-    <!-- Header -->
-    <header class="bg-gradient-to-r from-blue-600 to-blue-500 text-white sticky top-0 z-50 shadow-lg">
+    <header class="bg-blue-600 text-white sticky top-0 z-50">
         <div class="container mx-auto flex items-center justify-between py-4 px-6">
-            <div class="flex items-center">
-                <img src="path_to_your_logo/logo.png" alt="Ra Chusukundham FF Logo" class="h-20 w-20 rounded-full mr-3 shadow-md">
-                <h1 class="text-3xl font-bold">Ra Chusukundham FF</h1>
-            </div>
+            <h1 class="text-3xl font-bold">Ra Chusukundham FF</h1>
             <nav>
                 <ul class="flex space-x-6 text-lg">
-                    <li><a href="index.html" class="hover:text-yellow-400 transition duration-300">Home</a></li>
-                    <li><a href="videos.html" class="hover:text-yellow-400 transition duration-300">Videos</a></li>
-                    <li><a href="contact.html" class="hover:text-yellow-400 transition duration-300">Contact</a></li>
+                    <li><a href="index.html" class="hover:text-yellow-400 transition">Home</a></li>
+                    <li><a href="videos.html" class="hover:text-yellow-400 transition">Videos</a></li>
+                    <li><a href="contact.html" class="hover:text-yellow-400 transition">Contact</a></li>
                 </ul>
             </nav>
         </div>
     </header>
-    
-    <!-- Main Content -->
+
     <main class="container mx-auto px-4 py-8">
         <h2 class="text-4xl font-bold mb-6 text-center text-gray-800">Contact Us</h2>
 
         <div class="glassmorphism bg-white/80 shadow-lg rounded-lg p-6 max-w-2xl mx-auto">
             <div class="mb-4">
                 <label for="contact-type" class="block text-gray-700 font-medium">Select Type</label>
-                <select id="contact-type" class="w-full mt-2 border-gray-300 rounded-lg focus:ring focus:ring-blue-500 focus:ring-opacity-50 bg-white/50" onchange="toggleFormFields()">
+                <select id="contact-type" class="w-full mt-2 border-gray-300 rounded-lg bg-white/50" onchange="toggleFormFields()">
                     <option value="feedback">Feedback</option>
                     <option value="room">Room</option>
                 </select>
             </div>
 
-            <!-- Contact Form -->
-            <form id="contact-form" class="space-y-6">
-                <!-- Feedback Fields -->
-                <div id="feedback-fields">
-                    <div class="flex flex-wrap -mx-2 space-y-4 sm:space-y-0">
-                        <div class="w-full sm:w-1/2 px-2">
-                            <label for="first_name" class="block text-gray-700 font-medium">First Name</label>
-                            <input type="text" id="first_name" name="first_name" class="w-full mt-2 border-gray-300 rounded-lg focus:ring focus:ring-blue-500 focus:ring-opacity-50 bg-white/50" placeholder="First Name" required>
-                        </div>
-                        <div class="w-full sm:w-1/2 px-2">
-                            <label for="last_name" class="block text-gray-700 font-medium">Last Name</label>
-                            <input type="text" id="last_name" name="last_name" class="w-full mt-2 border-gray-300 rounded-lg focus:ring focus:ring-blue-500 focus:ring-opacity-50 bg-white/50" placeholder="Last Name" required>
-                        </div>
-                    </div>
-                    <div class="mt-4">
-                        <label for="email" class="block text-gray-700 font-medium">Email</label>
-                        <input type="email" id="email" name="email" class="w-full mt-2 border-gray-300 rounded-lg focus:ring focus:ring-blue-500 focus:ring-opacity-50 bg-white/50" placeholder="Your Email" required>
-                    </div>
-                    <div class="mt-4">
-                        <label for="message" class="block text-gray-700 font-medium">Message</label>
-                        <textarea id="message" name="message" rows="4" class="w-full mt-2 border-gray-300 rounded-lg focus:ring focus:ring-blue-500 focus:ring-opacity-50 bg-white/50" placeholder="Your Message" required></textarea>
-                    </div>
-                </div>
+            <div id="feedback-fields">
+                <form id="feedback-form">
+                    <label class="block text-gray-700 font-medium">First Name</label>
+                    <input id="first_name" type="text" class="w-full mt-2 border-gray-300 rounded-lg bg-white/50" required>
 
-                <!-- Room Fields -->
-                <div id="room-fields" class="hidden">
-                    <div class="mt-4">
-                        <label for="username" class="block text-gray-700 font-medium">In-game Username</label>
-                        <input type="text" id="username" name="username" class="w-full mt-2 border-gray-300 rounded-lg focus:ring focus:ring-blue-500 focus:ring-opacity-50 bg-white/50" placeholder="In-game Username">
-                    </div>
-                    <div class="mt-4">
-                        <label for="room_email" class="block text-gray-700 font-medium">Email</label>
-                        <input type="email" id="room_email" name="room_email" class="w-full mt-2 border-gray-300 rounded-lg focus:ring focus:ring-blue-500 focus:ring-opacity-50 bg-white/50" placeholder="Your Email" required>
-                    </div>
-                    <div class="mt-4">
-                        <label for="uid" class="block text-gray-700 font-medium">User UID</label>
-                        <input type="text" id="uid" name="uid" maxlength="10" class="w-full mt-2 border-gray-300 rounded-lg focus:ring focus:ring-blue-500 focus:ring-opacity-50 bg-white/50" placeholder="User UID">
-                    </div>
-                    <div class="mt-4">
-                        <label for="match_type" class="block text-gray-700 font-medium">Match Type</label>
-                        <select id="match_type" name="match_type" class="w-full mt-2 border-gray-300 rounded-lg focus:ring focus:ring-blue-500 focus:ring-opacity-50 bg-white/50">
-                            <option value="1v1">1v1</option>
-                            <option value="2v2">2v2</option>
-                            <option value="4v4">4v4</option>
-                        </select>
-                    </div>
-                </div>
+                    <label class="block text-gray-700 font-medium mt-4">Last Name</label>
+                    <input id="last_name" type="text" class="w-full mt-2 border-gray-300 rounded-lg bg-white/50" required>
 
-                <!-- Submit Button -->
-                <button type="button" onclick="sendEmail()" class="w-full py-3 bg-gradient-to-r from-blue-600 to-blue-500 text-white font-bold rounded-lg hover:from-blue-700 hover:to-blue-600 transition duration-300">
-                    Submit
-                </button>
+                    <label class="block text-gray-700 font-medium mt-4">Email</label>
+                    <input id="email" type="email" class="w-full mt-2 border-gray-300 rounded-lg bg-white/50" required>
 
-                <!-- Loading Spinner -->
-                <div id="loading-spinner" class="fixed inset-0 flex items-center justify-center bg-white/75 hidden">
-                    <div class="loader-wrapper text-center">
-                        <div class="loader border-4 border-t-4 border-gray-200 h-12 w-12"></div>
-                        <div class="mt-4 text-lg font-semibold text-gray-800 animate-pulse">Sending Request...</div>
-                    </div>
-                </div>
-            </form>
+                    <label class="block text-gray-700 font-medium mt-4">Message</label>
+                    <textarea id="message" class="w-full mt-2 border-gray-300 rounded-lg bg-white/50" required></textarea>
+
+                    <button type="button" onclick="sendFeedback()" class="w-full py-3 bg-blue-600 text-white font-bold rounded-lg mt-4">Submit Feedback</button>
+                </form>
+            </div>
+
+            <div id="message-container" class="hidden mt-4 p-4 rounded-lg text-center"></div>
+
+            <div id="loading-spinner" class="fixed inset-0 flex items-center justify-center bg-white/75 hidden">
+                <div class="loader w-12 h-12"></div>
+                <p class="mt-4 text-lg font-semibold text-gray-800 animate-pulse">Sending...</p>
+            </div>
         </div>
     </main>
-
-    <!-- Footer -->
-    <footer class="bg-gray-800 text-white text-center py-6 mt-8">
-        <p>&copy; 2024 Ra Chusukundham FF. All Rights Reserved.</p>
-    </footer>
-
-    <script>
-        function toggleFormFields() {
-            const selectedType = document.getElementById('contact-type').value;
-            document.getElementById('feedback-fields').classList.toggle('hidden', selectedType !== 'feedback');
-            document.getElementById('room-fields').classList.toggle('hidden', selectedType !== 'room');
-        }
-
-        function sendEmail() {
-            const selectedType = document.getElementById('contact-type').value;
-            let formData;
-
-            // Show loading spinner
-            document.getElementById('loading-spinner').classList.remove('hidden');
-
-            if (selectedType === 'feedback') {
-                // Collect data for Feedback
-                formData = {
-                    first_name: document.getElementById('first_name').value,
-                    last_name: document.getElementById('last_name').value,
-                    email: document.getElementById('email').value,
-                    message: document.getElementById('message').value
-                };
-            } else {
-                // Collect data for Room
-                formData = {
-                    username: document.getElementById('username').value,
-                    room_email: document.getElementById('room_email').value,
-                    uid: document.getElementById('uid').value,
-                    match_type: document.getElementById('match_type').value
-                };
-            }
-
-            // Send the email using EmailJS
-            emailjs.send('service_o4w6ktr', 'template_22fzc1v', formData)
-                .then(function(response) {
-                    console.log('SUCCESS!', response.status, response.text);
-                    document.getElementById('loading-spinner').classList.add('hidden'); // Hide loading spinner
-                }, function(error) {
-                    console.log('FAILED...', error);
-                    document.getElementById('loading-spinner').classList.add('hidden'); // Hide loading spinner
-                });
-        }
-    </script>
 </body>
 </html>
