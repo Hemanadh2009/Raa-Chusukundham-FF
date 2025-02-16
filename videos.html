@@ -5,323 +5,408 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ra Chusukundham FF</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    
+    <style>
+        .bg-hero {
+            background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url('./assets/ff.gif');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .video-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+    </style>
 </head>
-<body class="bg-gift bg-gray-100">
-    <header class="bg-blue-600 bg-opacity-90 text-white p-8">
-        <div class="container mx-auto flex flex-col md:flex-row items-center justify-between">
-            <h1 class="text-xl font-bold">Ra Chusukundham FF</h1>
-            <nav class="flex-grow">
-                <div class="flex justify-center space-x-4">
-                    <a href="index.html" class="text-white">Home</a>
-                    <a href="videos.html" class="text-white">Videos</a>
-                    <a href="contact.html" class="text-white">Contact</a>
-                </div>
+<body class="bg-gray-100">
+    <!-- Header Section -->
+    <header class="bg-blue-600 text-white sticky top-0 z-50">
+        <div class="container mx-auto flex items-center justify-between py-4 px-6">
+            <h1 class="text-3xl font-bold">Ra Chusukundham FF</h1>
+            <nav>
+                <ul class="flex space-x-6 text-lg">
+                    <li><a href="index.html" class="hover:text-yellow-400 transition">Home</a></li>
+                    <li><a href="videos.html" class="hover:text-yellow-400 transition">Videos</a></li>
+                    <li><a href="contact.html" class="hover:text-yellow-400 transition">Contact</a></li>
+                </ul>
             </nav>
         </div>
     </header>
-    
-    <section class="bg-green-200 bg-cover bg-center h-screen bg-opacity-90 py-20">
+
+
+    <!-- Hero Section -->
+    <section class=" bg-cover bg-center bg-opacity-90 py-20">
         <div class="container mx-auto text-center">
-            <h2 class="text-2xl font-bold mb-4">Ra Chusukundham FF</h2>
-            <a href="https://www.youtube.com/@ScorchSquadFF" target="_blank" class="bg-red-600 text-white font-bold py-2 px-4 rounded hover:bg-red-700">
+            <h2 class="text-4xl font-bold mb-6">Ra Chusukundham FF</h2>
+            <a href="https://www.youtube.com/@ScorchSquadFF" target="_blank" class="bg-red-600 text-white text-lg font-bold py-3 px-6 rounded-lg hover:bg-red-700">
                 Subscribe
             </a>
         </div>
     </section>
+    <!-- <section class="bg-hero h-screen flex items-center justify-center text-center text-white">
+        <div>
+            <h2 class="text-4xl md:text-6xl font-bold mb-6">Welcome to Ra Chusukundham FF</h2>
+            <p class="text-lg md:text-2xl mb-8">Discover epic Free Fire gameplay and exclusive challenges!</p>
+            <a href="https://www.youtube.com/@ScorchSquadFF" target="_blank"
+               class="bg-red-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-red-700 transition text-lg">
+                Subscribe Now
+            </a>
+        </div>
+    </section> -->
 
-    <!-- Latest Video Title -->
-    <div class="text-center mb-8">
-        <h1 class="text-4xl font-bold">Videos</h1>
-    </div>
-    <div class="text-center mb-8">
-        <h1 class="text-2xl font-bold">Long Videos</h1>
-    </div>
+    <!-- Long Videos Section -->
+    <section class="py-16 bg-gray-100">
+        <div class="container mx-auto text-center mb-8">
+            <h1 class="text-4xl font-bold">Latest Videos</h1>
+        </div>
 
-    <!-- Video Cards -->
-    <section class="bg-green-200 bg-opacity-90 py-20">
-        <div class="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div class="bg-white shadow-md rounded-lg overflow-hidden">
-                <img class="w-full h-63 object-cover" src="./assets/WhatsApp Image 2024-06-03 at 11.45.50_eb9c45d4.jpg" alt="Video Thumbnail 1">
+        <!-- Long Videos -->
+        <div class="text-center mb-8">
+            <h2 class="text-2xl font-bold">Long Videos</h2>
+        </div>
+        <div class="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Video Card 1 -->
+            <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+                <img class="w-full h-64 object-cover" src="./assets/WhatsApp Image 2024-06-03 at 11.45.50_eb9c45d4.jpg" alt="Video Thumbnail 1">
                 <div class="p-4">
                     <h2 class="text-xl font-bold mb-2">Lone wolf 1v1 5-0 only head🍷🍷🍷🍷🍻🍻🍻🍻</h2>
-                    <p class="text-gray-700"></p>
-                    <a href="https://youtu.be/h9Ps_ncQjxM" class="text-blue-600 mt-4 inline-block">Watch Now</a>
+                    <a href="https://youtu.be/h9Ps_ncQjxM" class="text-blue-600 hover:text-blue-800">Watch Now</a>
                 </div>
             </div>
 
-            <div class="bg-white shadow-md rounded-lg overflow-hidden">
-                <img class="w-full h-63 object-cover" src="./assets/vid 2.jpg" alt="Video Thumbnail 2">
+            <!-- Video Card 2 -->
+            <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+                <img class="w-full h-64 object-cover" src="./assets/vid 2.jpg" alt="Video Thumbnail 2">
                 <div class="p-4">
                     <h2 class="text-xl font-bold mb-2">Youtuber vs subscriber 1v1 challenge for Subscriber #freefire #gaming #garenafreefire #freefiremax</h2>
-                    <p class="text-gray-700"></p>
-                    <a href="https://youtu.be/3C_Qet6mdKw" class="text-blue-600 mt-4 inline-block">Watch Now</a>
-                </div>
-            </div>
-            <!-- <div class="bg-white shadow-md rounded-lg overflow-hidden">
-                <img class="w-full h-48 object-cover" src="[Video Thumbnail URL 3]" alt="Video Thumbnail 3">
-                <div class="p-4">
-                    <h2 class="text-xl font-bold mb-2">Video Title 3</h2>
-                    <p class="text-gray-700">Short description of the video content.</p>
-                    <a href="#" class="text-blue-600 mt-4 inline-block">Watch Now</a>
-                </div>
-            </div> 
-            <div class="bg-white shadow-md rounded-lg overflow-hidden">
-                <img class="w-full h-48 object-cover" src="[Video Thumbnail URL 4]" alt="Video Thumbnail 3">
-                <div class="p-4">
-                    <h2 class="text-xl font-bold mb-2">Video Title 3</h2>
-                    <p class="text-gray-700">Short description of the video content.</p>
-                    <a href="#" class="text-blue-600 mt-4 inline-block">Watch Now</a>
-                </div>
-            </div>  -->
-             
-        </div>
-    </section>
-    <div class="text-center mb-8">
-        <h1 class="text-2xl font-bold">Short Videos</h1>
-    </div>
-    <section class="bg-green-200 bg-opacity-90 py-20">
-        <div class="container mx-auto grid grid-cols-1 md:grid-cols-5 gap-8">
-            <div class="bg-white shadow-md rounded-lg overflow-hidden">
-                <img class="w-full h-100 object-cover" src="./assets/shr 1.png" alt="Video Thumbnail 1">
-                <div class="p-4">
-                    <h2 class="text-xl font-bold mb-2">One tap only red happy #freefire #gaming #ff #RA CHUSKUNDHAM FF Subscribe</h2>
-                    <p class="text-gray-700"></p>
-                    <a href="https://youtube.com/shorts/AHflSZG9DvU?si=JHkMgFm0jMteigfz" class="text-blue-600 mt-4 inline-block">Watch Now</a>
+                    <a href="https://youtu.be/3C_Qet6mdKw" class="text-blue-600 hover:text-blue-800">Watch Now</a>
                 </div>
             </div>
 
-            <div class="bg-white shadow-md rounded-lg overflow-hidden">
-                <img class="w-full h-100 object-cover" src="./assets/shr 2.png " alt="Video Thumbnail 1">
+            <!-- Video 3
+            <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+                <img class="w-full h-64 object-cover" src="[Video Thumbnail URL 3]" alt="Video Thumbnail 3">
                 <div class="p-4">
-                    <h2 class="text-xl font-bold mb-2">1v1 head with m1887 #freefire #gaming</h2>
-                    <p class="text-gray-700"></p>
-                    <a href="https://youtube.com/shorts/Wlq7rt8nmr4?si=zxJLI4UBHFPNTuUq" class="text-blue-600 mt-4 inline-block">Watch Now</a>
+                    <h2 class="text-xl font-bold mb-2">Video Title 3</h2>
+                    <a href="#" class="text-blue-600 hover:text-blue-800">Watch Now</a>
                 </div>
             </div>
-            <div class="bg-white shadow-md rounded-lg overflow-hidden">
-                <img class="w-full h-100 object-cover" src="./assets/shr 3.png" alt="Video Thumbnail 1">
+
+            Video 4
+            <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+                <img class="w-full h-64 object-cover" src="./assets/vid 3.jpg" alt="Video Thumbnail 4">
                 <div class="p-4">
-                    <h2 class="text-xl font-bold mb-2">1v4 impossible party</h2>
-                    <p class="text-gray-700"></p>
-                    <a href="https://youtube.com/shorts/3FU-ArRBRPA?si=Z1ZTYRPuQdW4QnEM" class="text-blue-600 mt-4 inline-block">Watch Now</a>
+                    <h2 class="text-xl font-bold mb-2">Duo vs Squad 1v4 win with 1 HP left 😎</h2>
+                    <a href="https://youtu.be/MoXUMaISbd4" class="text-blue-600 hover:text-blue-800">Watch Now</a>
                 </div>
             </div>
-            <div class="bg-white shadow-md rounded-lg overflow-hidden">
-                <img class="w-full h-100 object-cover" src="./assets/shr 4.png" alt="Video Thumbnail 1">
+
+             Video 5
+            <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+                <img class="w-full h-64 object-cover" src="./assets/vid 4.jpg" alt="Video Thumbnail 5">
                 <div class="p-4">
-                    <h2 class="text-xl font-bold mb-2">1v4 impossible #freefire #gaming #scorchsquadgaming Subscribe</h2>
-                    <p class="text-gray-700"></p>
-                    <a href="https://youtube.com/shorts/5f8JcTnFnow?si=qUQYH9B2HHlXBNBU" class="text-blue-600 mt-4 inline-block">Watch Now</a>
+                    <h2 class="text-xl font-bold mb-2">Free Fire Challenge - Max Damage Test 💥</h2>
+                    <a href="https://youtu.be/v2DjjX0iE4Y" class="text-blue-600 hover:text-blue-800">Watch Now</a>
                 </div>
             </div>
-            <div class="bg-white shadow-md rounded-lg overflow-hidden">
-                <img class="w-full h-100 object-cover" src="./assets/shr 5.png" alt="Video Thumbnail 1">
+
+             Video 6
+            <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+                <img class="w-full h-64 object-cover" src="./assets/vid 5.jpg" alt="Video Thumbnail 6">
                 <div class="p-4">
-                    <h2 class="text-xl font-bold mb-2">RA CHUSKUNDHAM FF Free Fire Gameplay Short video #viral #white444 #raistar #pagalm10 #rachuskundhamff #shorts</h2>
-                    <p class="text-gray-700"></p>
-                    <a href="https://youtube.com/shorts/OG2ddAWHo8k?si=Yc898ZB4p8uY5PVe" class="text-blue-600 mt-4 inline-block">Watch Now</a>
+                    <h2 class="text-xl font-bold mb-2">Epic 1v1 Free Fire Battle 🔥</h2>
+                    <a href="https://youtu.be/75-8giGQcmw" class="text-blue-600 hover:text-blue-800">Watch Now</a>
                 </div>
-            </div>
-            <div class="bg-white shadow-md rounded-lg overflow-hidden">
-                <img class="w-full h-100 object-cover" src="./assets/shr 6.png" alt="Video Thumbnail 1">
-                <div class="p-4">
-                    <h2 class="text-xl font-bold mb-2">RA CHUSKUNDHAM FF Free Fire Gameplay Short video #viral #white444 #raistar #pagalm10 #rachuskundhamff #shorts
-                    </h2>
-                    <p class="text-gray-700"></p>
-                    <a href="https://youtube.com/shorts/x-RIz97j1Bc?si=SOMHbGgKsOP3Wp6V" class="text-blue-600 mt-4 inline-block">Watch Now</a>
-                </div>
-            </div>
-            <div class="bg-white shadow-md rounded-lg overflow-hidden">
-                <img class="w-full h-100 object-cover" src="./assets/shr 7.png" alt="Video Thumbnail 1">
-                <div class="p-4">
-                    <h2 class="text-xl font-bold mb-2">RA CHUSKUNDHAM FF Free Fire Gameplay Short video #viral #white444 #raistar #pagalm10 #rachuskundhamff #shorts</h2>
-                    <p class="text-gray-700"></p>
-                    <a href="https://youtube.com/shorts/UHH5Wq7H0xg?si=kQTI77WyiUdtyLqJ" class="text-blue-600 mt-4 inline-block">Watch Now</a>
-                </div>
-            </div>
-            <div class="bg-white shadow-md rounded-lg overflow-hidden">
-                <img class="w-full h-100 object-cover" src="./assets/shr 8.png" alt="Video Thumbnail 1">
-                <div class="p-4">
-                    <h2 class="text-xl font-bold mb-2">RA CHUSKUNDHAM FF Free Fire Gameplay Short video #viral #white444 #raistar #pagalm10 #rachuskundhamff #shorts</h2>
-                    <p class="text-gray-700"></p>
-                    <a href="https://youtube.com/shorts/qh1BhZfkgS4?si=xIpS23-ErG3f6Mo9" class="text-blue-600 mt-4 inline-block">Watch Now</a>
-                </div>
-            </div>
-            <div class="bg-white shadow-md rounded-lg overflow-hidden">
-                <img class="w-full h-100 object-cover" src="./assets/shr 9.png" alt="Video Thumbnail 1">
-                <div class="p-4">
-                    <h2 class="text-xl font-bold mb-2">RA CHUSKUNDHAM FF Free Fire Gameplay Short video #viral #white444 #raistar #pagalm10 #rachuskundhamff #shorts</h2>
-                    <p class="text-gray-700"></p>
-                    <a href="https://youtube.com/shorts/8Tk7rHwdYH0?si=A0U9KkDEXejPahMX" class="text-blue-600 mt-4 inline-block">Watch Now</a>
-                </div>
-            </div>
-            <div class="bg-white shadow-md rounded-lg overflow-hidden">
-                <img class="w-full h-100 object-cover" src="./assets/shr 10.png" alt="Video Thumbnail 1">
-                <div class="p-4">
-                    <h2 class="text-xl font-bold mb-2">RA CHUSKUNDHAM FF Free Fire Gameplay Short video #viral #white444 #raistar #pagalm10 #rachuskundhamff #shorts</h2>
-                    <p class="text-gray-700"></p>
-                    <a href="https://youtube.com/shorts/2q86FWKn7qY?si=BQQnph2HWk77hgZt" class="text-blue-600 mt-4 inline-block">Watch Now</a>
-                </div>
-            </div>
-            <div class="bg-white shadow-md rounded-lg overflow-hidden">
-                <img class="w-full h-100 object-cover" src="./assets/shr 11.png" alt="Video Thumbnail 1">
-                <div class="p-4">
-                    <h2 class="text-xl font-bold mb-2">RA CHUSKUNDHAM FF Free Fire Gameplay Short video #viral #white444 #raistar #pagalm10 #rachuskundhamff #shorts</h2>
-                    <p class="text-gray-700"></p>
-                    <a href="https://youtube.com/shorts/ghmtsT-wbmA?si=lNSLb4nTZgsFOrYp" class="text-blue-600 mt-4 inline-block">Watch Now</a>
-                </div>
-            </div>
-            <div class="bg-white shadow-md rounded-lg overflow-hidden">
-                <img class="w-full h-100 object-cover" src="./assets/shr 12.png" alt="Video Thumbnail 1">
-                <div class="p-4">
-                    <h2 class="text-xl font-bold mb-2">RA CHUSKUNDHAM FF Free Fire Gameplay Short video #viral #white444 #raistar #pagalm10 #rachuskundhamff #shorts</h2>
-                    <p class="text-gray-700"></p>
-                    <a href="https://youtube.com/shorts/7fY3PefJ9ok?si=h-C6SvLcR6AUdN_Z" class="text-blue-600 mt-4 inline-block">Watch Now</a>
-                </div>
-            </div>
-            <div class="bg-white shadow-md rounded-lg overflow-hidden">
-                <img class="w-full h-100 object-cover" src="./assets/shr 13.png" alt="Video Thumbnail 1">
-                <div class="p-4">
-                    <h2 class="text-xl font-bold mb-2">RA CHUSKUNDHAM FF Free Fire Gameplay Short video #viral #white444 #raistar #pagalm10 #rachuskundhamff #shorts</h2>
-                    <p class="text-gray-700"></p>
-                    <a href="https://youtube.com/shorts/KNSLjwi4cKs?si=eHVXe9bowKTd6alu" class="text-blue-600 mt-4 inline-block">Watch Now</a>
-                </div>
-            </div>
-            <div class="bg-white shadow-md rounded-lg overflow-hidden">
-                <img class="w-full h-100 object-cover" src="./assets/shr 14.png" alt="Video Thumbnail 1">
-                <div class="p-4">
-                    <h2 class="text-xl font-bold mb-2">RA CHUSKUNDHAM FF Free Fire Gameplay Short video #viral #white444 #raistar #pagalm10 #rachuskundhamff #shorts</h2>
-                    <p class="text-gray-700"></p>
-                    <a href="https://youtube.com/shorts/FmhJFxrA2_Y?si=miu5jlJtYiygzE_L" class="text-blue-600 mt-4 inline-block">Watch Now</a>
-                </div>
-            </div>
-            <div class="bg-white shadow-md rounded-lg overflow-hidden">
-                <img class="w-full h-100 object-cover" src="./assets/shr 15.png" alt="Video Thumbnail 1">
-                <div class="p-4">
-                    <h2 class="text-xl font-bold mb-2">1v3 clutch with desert eagle head shotScorchSquadFF#viral #white444 #raistar #pagalm10 #freefire</h2>
-                    <p class="text-gray-700"></p>
-                    <a href="https://youtube.com/shorts/vRXn2h-URYY?si=yd6U8jPPi62EDCeX" class="text-blue-600 mt-4 inline-block">Watch Now</a>
-                </div>
-            </div>
-            <div class="bg-white shadow-md rounded-lg overflow-hidden">
-                <img class="w-full h-100 object-cover" src="./assets/shr 16.png" alt="Video Thumbnail 1">
-                <div class="p-4">
-                    <h2 class="text-xl font-bold mb-2">1v2 with ump #headshots #my #new #video #trending #shoit #freefire #gaming #gameplay</h2>
-                    <p class="text-gray-700"></p>
-                    <a href="https://youtube.com/shorts/f5hdkt_GClY?si=WhkY3QBOWhcRV4cm" class="text-blue-600 mt-4 inline-block">Watch Now</a>
-                </div>
-            </div>
-            <div class="bg-white shadow-md rounded-lg overflow-hidden">
-                <img class="w-full h-100 object-cover" src="./assets/shr 17.png" alt="Video Thumbnail 1">
-                <div class="p-4">
-                    <h2 class="text-xl font-bold mb-2">#headshot like a hacker with m1014</h2>
-                    <p class="text-gray-700"></p>
-                    <a href="https://youtube.com/shorts/tSaISVuel6c?si=tolPl0oSy6uZiFV8" class="text-blue-600 mt-4 inline-block">Watch Now</a>
-                </div>
-            </div>
-            <div class="bg-white shadow-md rounded-lg overflow-hidden">
-                <img class="w-full h-100 object-cover" src="./assets/shr 18.png" alt="Video Thumbnail 1">
-                <div class="p-4">
-                    <h2 class="text-xl font-bold mb-2">head with m1014 #freefire #my new video trending short</h2>
-                    <p class="text-gray-700"></p>
-                    <a href="https://youtube.com/shorts/06jVn53eBnc?si=jq69IQzBJ8Fh5UBT" class="text-blue-600 mt-4 inline-block">Watch Now</a>
-                </div>
-            </div>
-            <div class="bg-white shadow-md rounded-lg overflow-hidden">
-                <img class="w-full h-100 object-cover" src="./assets/shr 19.png" alt="Video Thumbnail 1">
-                <div class="p-4">
-                    <h2 class="text-xl font-bold mb-2">only red with m1887 #freefire #my #new #video #trending #short</h2>
-                    <p class="text-gray-700"></p>
-                    <a href="https://youtube.com/shorts/SPrdWbaIiAU?si=Uh_KBpLJyarrswwB" class="text-blue-600 mt-4 inline-block">Watch Now</a>
-                </div>
-            </div>
-            <div class="bg-white shadow-md rounded-lg overflow-hidden">
-                <img class="w-full h-100 object-cover" src="./assets/shr 20.png" alt="Video Thumbnail 1">
-                <div class="p-4">
-                    <h2 class="text-xl font-bold mb-2">impossible only red 🍻🍻🍷🍷 Subscribe</h2>
-                    <p class="text-gray-700"></p>
-                    <a href="https://youtube.com/shorts/dWFw8g_M6t4?si=9a-U4aaUn17UzAwH" class="text-blue-600 mt-4 inline-block">Watch Now</a>
-                </div>
-            </div>
-            <div class="bg-white shadow-md rounded-lg overflow-hidden">
-                <img class="w-full h-100 object-cover" src="./assets/shr 21.png" alt="Video Thumbnail 1">
-                <div class="p-4">
-                    <h2 class="text-xl font-bold mb-2">1 v 4 impossible</h2>
-                    <p class="text-gray-700"></p>
-                    <a href="https://youtube.com/shorts/lbT41qgMy4o?si=VbcEW3_jgZCSeVvF" class="text-blue-600 mt-4 inline-block">Watch Now</a>
-                </div>
-            </div>
-            <div class="bg-white shadow-md rounded-lg overflow-hidden">
-                <img class="w-full h-100 object-cover" src="./assets/shr 22.png" alt="Video Thumbnail 1">
-                <div class="p-4">
-                    <h2 class="text-xl font-bold mb-2">1 v 1 only red impossible</h2>
-                    <p class="text-gray-700"></p>
-                    <a href="https://youtube.com/shorts/aOhXxIRzP1g?si=3qdis5ZKHMEg6pZN" class="text-blue-600 mt-4 inline-block">Watch Now</a>
-                </div>
-            </div>
-            <div class="bg-white shadow-md rounded-lg overflow-hidden">
-                <img class="w-full h-100 object-cover" src="./assets/shr 23.png" alt="Video Thumbnail 1">
-                <div class="p-4">
-                    <h2 class="text-xl font-bold mb-2">1 v 1 only red impossible</h2>
-                    <p class="text-gray-700"></p>
-                    <a href="https://youtube.com/shorts/wrPLip4Oezc?si=jjQ5A4ikYIvX0mJK" class="text-blue-600 mt-4 inline-block">Watch Now</a>
-                </div>
-            </div>
-            <div class="bg-white shadow-md rounded-lg overflow-hidden">
-                <img class="w-full h-100 object-cover" src="./assets/shr 24.png" alt="Video Thumbnail 1">
-                <div class="p-4">
-                    <h2 class="text-xl font-bold mb-2">1 v 1 only red impossible</h2>
-                    <p class="text-gray-700"></p>
-                    <a href="https://youtube.com/shorts/ePNl68zIcS0?si=adhjiTV6FzCBo1nS" class="text-blue-600 mt-4 inline-block">Watch Now</a>
-                </div>
-            </div>
-            <div class="bg-white shadow-md rounded-lg overflow-hidden">
-                <img class="w-full h-100 object-cover" src="./assets/shr 25.png" alt="Video Thumbnail 1">
-                <div class="p-4">
-                    <h2 class="text-xl font-bold mb-2">1 vs 4 only headshots</h2>
-                    <p class="text-gray-700"></p>
-                    <a href="https://youtube.com/shorts/20E7kTFydUU?si=mPS0YmLu5btKywSK" class="text-blue-600 mt-4 inline-block">Watch Now</a>
-                </div>
-            </div>
-            <div class="bg-white shadow-md rounded-lg overflow-hidden">
-                <img class="w-full h-100 object-cover" src="./assets/shr 26.png" alt="Video Thumbnail 1">
-                <div class="p-4">
-                    <h2 class="text-xl font-bold mb-2">impossible</h2>
-                    <p class="text-gray-700"></p>
-                    <a href="https://youtube.com/shorts/3t0Lsw3rRVo?si=Z2s24OxEjrpAex1q" class="text-blue-600 mt-4 inline-block">Watch Now</a>
-                </div>
-            </div>
-            <div class="bg-white shadow-md rounded-lg overflow-hidden">
-                <img class="w-full h-100 object-cover" src="./assets/shr 27.png" alt="Video Thumbnail 1">
-                <div class="p-4">
-                    <h2 class="text-xl font-bold mb-2">impossible</h2>
-                    <p class="text-gray-700"></p>
-                    <a href="https://youtube.com/shorts/vofyK7jDpmM?si=GfLC69kbpr6kQsm5" class="text-blue-600 mt-4 inline-block">Watch Now</a>
-                </div>
-            </div>
-            <div class="bg-white shadow-md rounded-lg overflow-hidden">
-                <img class="w-full h-100 object-cover" src="./assets/shr 28.png" alt="Video Thumbnail 1">
-                <div class="p-4">
-                    <h2 class="text-xl font-bold mb-2">OP Vala subscribe please and like SCORCH SQUAD FF</h2>
-                    <p class="text-gray-700"></p>
-                    <a href="https://youtube.com/shorts/d3pK_g5K3t8?si=i2Eb2mXG3k8KSNbV" class="text-blue-600 mt-4 inline-block">Watch Now</a>
-                </div>
-            </div>
-            <div class="bg-white shadow-md rounded-lg overflow-hidden">
-                <img class="w-full h-100 object-cover" src="./assets/shr 29.png" alt="Video Thumbnail 1">
-                <div class="p-4">
-                    <h2 class="text-xl font-bold mb-2">1v2 only head party</h2>
-                    <p class="text-gray-700"></p>
-                    <a href="https://youtube.com/shorts/DCQ6Y5agFMM?si=7jbxdBJ38AaJ80rX" class="text-blue-600 mt-4 inline-block">Watch Now</a>
-                </div>
-            </div>
+            </div> -->
         </div>
     </section>
-    <footer class="bg-gray-800 text-white p-4">
+
+    <!-- Short Videos Section -->
+    <section class="py-16 bg-gray-100">
+        <div class="container mx-auto text-center mb-8">
+            <h2 class="text-2xl font-bold">Short Videos</h2>
+        </div>
+
+        <div class="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8">
+            <!-- Short Video Card 1 -->
+            <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+                <img class="w-full h-48 object-cover" src="./assets/shr 1.png" alt="Short Video Thumbnail 1">
+                <div class="p-4">
+                    <h3 class="text-xl font-bold mb-2">One tap only red happy #freefire #gaming #ff #RA CHUSKUNDHAM FF Subscribe</h3>
+                    <a href="https://youtube.com/shorts/AHflSZG9DvU?si=JHkMgFm0jMteigfz" class="text-blue-600 hover:text-blue-800">Watch Now</a>
+                </div>
+            </div>
+
+            <!-- Short Video Card 2 -->
+            <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+                <img class="w-full h-48 object-cover" src="./assets/shr 2.png" alt="Short Video Thumbnail 2">
+                <div class="p-4">
+                    <h3 class="text-xl font-bold mb-2">Epic No Scope Headshot 😱 #shorts</h3>
+                    <a href="https://youtube.com/shorts/KJgfV8EzA4U" class="text-blue-600 hover:text-blue-800">Watch Now</a>
+                </div>
+            </div>
+
+            <!-- Short Video Card 3 -->
+            <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+                <img class="w-full h-48 object-cover" src="./assets/shr 3.png" alt="Short Video Thumbnail 3">
+                <div class="p-4">
+                    <h3 class="text-xl font-bold mb-2">Free Fire Trick Shot Compilation 🎯</h3>
+                    <a href="https://youtube.com/shorts/D9g73knxwIU" class="text-blue-600 hover:text-blue-800">Watch Now</a>
+                </div>
+            </div>
+
+            <!-- Short Video Card 4 -->
+            <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+                <img class="w-full h-48 object-cover" src="./assets/shr 4.png" alt="Short Video Thumbnail 4">
+                <div class="p-4">
+                    <h3 class="text-xl font-bold mb-2">Headshot Frenzy 🔫 #shorts</h3>
+                    <a href="https://youtube.com/shorts/PaWc0lVpZqE" class="text-blue-600 hover:text-blue-800">Watch Now</a>
+                </div>
+            </div>
+
+            <!-- Short Video Card 5 -->
+            <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+                <img class="w-full h-48 object-cover" src="./assets/shr 5.png" alt="Short Video Thumbnail 5">
+                <div class="p-4">
+                    <h3 class="text-xl font-bold mb-2">Ultimate Free Fire Trick #RA CHUSKUNDHAM FF</h3>
+                    <a href="https://youtube.com/shorts/xgImchzRcmg" class="text-blue-600 hover:text-blue-800">Watch Now</a>
+                </div>
+            </div>
+
+            <!-- Short Video Card 6 -->
+        <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+            <img class="w-full h-48 object-cover" src="./assets/shr 6.png" alt="Short Video Thumbnail 6">
+            <div class="p-4">
+                <h3 class="text-xl font-bold mb-2">Headshot Prowess 🔥 #shorts</h3>
+                <a href="https://youtube.com/shorts/YDpDxKiiYB8" class="text-blue-600 hover:text-blue-800">Watch Now</a>
+            </div>
+        </div>
+
+        <!-- Short Video Card 7 -->
+        <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+            <img class="w-full h-48 object-cover" src="./assets/shr 7.png" alt="Short Video Thumbnail 7">
+            <div class="p-4">
+                <h3 class="text-xl font-bold mb-2">Unbelievable 1v4 Clutch 🔥 #shorts</h3>
+                <a href="https://youtube.com/shorts/qXl9n4nxrDo" class="text-blue-600 hover:text-blue-800">Watch Now</a>
+            </div>
+        </div>
+
+        <!-- Short Video Card 8 -->
+        <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+            <img class="w-full h-48 object-cover" src="./assets/shr 8.png" alt="Short Video Thumbnail 8">
+            <div class="p-4">
+                <h3 class="text-xl font-bold mb-2">Amazing Free Fire Moments #shorts</h3>
+                <a href="https://youtube.com/shorts/jc8kxhRlKnI" class="text-blue-600 hover:text-blue-800">Watch Now</a>
+            </div>
+        </div>
+
+        <!-- Short Video Card 9 -->
+        <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+            <img class="w-full h-48 object-cover" src="./assets/shr 9.png" alt="Short Video Thumbnail 9">
+            <div class="p-4">
+                <h3 class="text-xl font-bold mb-2">Incredible 360° Headshot 😱 #shorts</h3>
+                <a href="https://youtube.com/shorts/tU62GpNnq0I" class="text-blue-600 hover:text-blue-800">Watch Now</a>
+            </div>
+        </div>
+
+        <!-- Short Video Card 10 -->
+        <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+            <img class="w-full h-48 object-cover" src="./assets/shr 10.png" alt="Short Video Thumbnail 10">
+            <div class="p-4">
+                <h3 class="text-xl font-bold mb-2">Epic Sniper Shot #shorts</h3>
+                <a href="https://youtube.com/shorts/WpKzxgdufbY" class="text-blue-600 hover:text-blue-800">Watch Now</a>
+            </div>
+        </div>
+
+        <!-- Short Video Card 11 -->
+        <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+            <img class="w-full h-48 object-cover" src="./assets/shr 11.png" alt="Short Video Thumbnail 11">
+            <div class="p-4">
+                <h3 class="text-xl font-bold mb-2">Insane Headshots 🔥 #shorts</h3>
+                <a href="https://youtube.com/shorts/XXXX" class="text-blue-600 hover:text-blue-800">Watch Now</a>
+            </div>
+        </div>
+
+        <!-- Short Video Card 12 -->
+        <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+            <img class="w-full h-48 object-cover" src="./assets/shr 12.png" alt="Short Video Thumbnail 12">
+            <div class="p-4">
+                <h3 class="text-xl font-bold mb-2">Clutch Moments 🔥 #shorts</h3>
+                <a href="https://youtube.com/shorts/XXXX" class="text-blue-600 hover:text-blue-800">Watch Now</a>
+            </div>
+        </div>
+
+        <!-- Short Video Card 13 -->
+        <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+            <img class="w-full h-48 object-cover" src="./assets/shr 13.png" alt="Short Video Thumbnail 13">
+            <div class="p-4">
+                <h3 class="text-xl font-bold mb-2">No Scope Kill Montage #shorts</h3>
+                <a href="https://youtube.com/shorts/XXXX" class="text-blue-600 hover:text-blue-800">Watch Now</a>
+            </div>
+        </div>
+
+        <!-- Short Video Card 14 -->
+        <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+            <img class="w-full h-48 object-cover" src="./assets/shr 14.png" alt="Short Video Thumbnail 14">
+            <div class="p-4">
+                <h3 class="text-xl font-bold mb-2">Solo vs Squad Epic Win #shorts</h3>
+                <a href="https://youtube.com/shorts/XXXX" class="text-blue-600 hover:text-blue-800">Watch Now</a>
+            </div>
+        </div>
+
+        <!-- Short Video Card 15 -->
+        <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+            <img class="w-full h-48 object-cover" src="./assets/shr 15.png" alt="Short Video Thumbnail 15">
+            <div class="p-4">
+                <h3 class="text-xl font-bold mb-2">Ultimate Free Fire Skill Showcase #shorts</h3>
+                <a href="https://youtube.com/shorts/XXXX" class="text-blue-600 hover:text-blue-800">Watch Now</a>
+            </div>
+        </div>
+
+        <!-- Short Video Card 16 -->
+        <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+            <img class="w-full h-48 object-cover" src="./assets/shr 16.png" alt="Short Video Thumbnail 16">
+            <div class="p-4">
+                <h3 class="text-xl font-bold mb-2">1v1 Challenge Victory #shorts</h3>
+                <a href="https://youtube.com/shorts/XXXX" class="text-blue-600 hover:text-blue-800">Watch Now</a>
+            </div>
+        </div>
+
+        <!-- Short Video Card 17 -->
+        <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+            <img class="w-full h-48 object-cover" src="./assets/shr 17.png" alt="Short Video Thumbnail 17">
+            <div class="p-4">
+                <h3 class="text-xl font-bold mb-2">Free Fire Epic Moments #shorts</h3>
+                <a href="https://youtube.com/shorts/XXXX" class="text-blue-600 hover:text-blue-800">Watch Now</a>
+            </div>
+        </div>
+
+        <!-- Short Video Card 18 -->
+        <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+            <img class="w-full h-48 object-cover" src="./assets/shr 18.png" alt="Short Video Thumbnail 18">
+            <div class="p-4">
+                <h3 class="text-xl font-bold mb-2">Ultimate Sniper Headshots #shorts</h3>
+                <a href="https://youtube.com/shorts/XXXX" class="text-blue-600 hover:text-blue-800">Watch Now</a>
+            </div>
+        </div>
+
+        <!-- Short Video Card 19 -->
+        <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+            <img class="w-full h-48 object-cover" src="./assets/shr 19.png" alt="Short Video Thumbnail 19">
+            <div class="p-4">
+                <h3 class="text-xl font-bold mb-2">Solo Survival Challenge #shorts</h3>
+                <a href="https://youtube.com/shorts/XXXX" class="text-blue-600 hover:text-blue-800">Watch Now</a>
+            </div>
+        </div>
+
+        <!-- Short Video Card 20 -->
+        <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+            <img class="w-full h-48 object-cover" src="./assets/shr 20.png" alt="Short Video Thumbnail 20">
+            <div class="p-4">
+                <h3 class="text-xl font-bold mb-2">The Best Free Fire Strategy #shorts</h3>
+                <a href="https://youtube.com/shorts/XXXX" class="text-blue-600 hover:text-blue-800">Watch Now</a>
+            </div>
+        </div>
+
+        <!-- Short Video Card 21 -->
+<div class="bg-white shadow-lg rounded-lg overflow-hidden">
+    <img class="w-full h-48 object-cover" src="./assets/shr 21.png" alt="Short Video Thumbnail 21">
+    <div class="p-4">
+        <h3 class="text-xl font-bold mb-2">Epic Drop Shot Moments #shorts</h3>
+        <a href="https://youtube.com/shorts/XXXX" class="text-blue-600 hover:text-blue-800">Watch Now</a>
+    </div>
+</div>
+
+<!-- Short Video Card 22 -->
+<div class="bg-white shadow-lg rounded-lg overflow-hidden">
+    <img class="w-full h-48 object-cover" src="./assets/shr 22.png" alt="Short Video Thumbnail 22">
+    <div class="p-4">
+        <h3 class="text-xl font-bold mb-2">Unbelievable Free Fire Kills #shorts</h3>
+        <a href="https://youtube.com/shorts/XXXX" class="text-blue-600 hover:text-blue-800">Watch Now</a>
+    </div>
+</div>
+
+<!-- Short Video Card 23 -->
+<div class="bg-white shadow-lg rounded-lg overflow-hidden">
+    <img class="w-full h-48 object-cover" src="./assets/shr 23.png" alt="Short Video Thumbnail 23">
+    <div class="p-4">
+        <h3 class="text-xl font-bold mb-2">Game Changing Headshots #shorts</h3>
+        <a href="https://youtube.com/shorts/XXXX" class="text-blue-600 hover:text-blue-800">Watch Now</a>
+    </div>
+</div>
+
+<!-- Short Video Card 24 -->
+<div class="bg-white shadow-lg rounded-lg overflow-hidden">
+    <img class="w-full h-48 object-cover" src="./assets/shr 24.png" alt="Short Video Thumbnail 24">
+    <div class="p-4">
+        <h3 class="text-xl font-bold mb-2">Free Fire Game on Fire 🔥 #shorts</h3>
+        <a href="https://youtube.com/shorts/XXXX" class="text-blue-600 hover:text-blue-800">Watch Now</a>
+    </div>
+</div>
+
+<!-- Short Video Card 25 -->
+<div class="bg-white shadow-lg rounded-lg overflow-hidden">
+    <img class="w-full h-48 object-cover" src="./assets/shr 25.png" alt="Short Video Thumbnail 25">
+    <div class="p-4">
+        <h3 class="text-xl font-bold mb-2">The Ultimate One Tap Headshot #shorts</h3>
+        <a href="https://youtube.com/shorts/XXXX" class="text-blue-600 hover:text-blue-800">Watch Now</a>
+    </div>
+</div>
+
+<!-- Short Video Card 26 -->
+<div class="bg-white shadow-lg rounded-lg overflow-hidden">
+    <img class="w-full h-48 object-cover" src="./assets/shr 26.png" alt="Short Video Thumbnail 26">
+    <div class="p-4">
+        <h3 class="text-xl font-bold mb-2">Sniper's Dream in Free Fire #shorts</h3>
+        <a href="https://youtube.com/shorts/XXXX" class="text-blue-600 hover:text-blue-800">Watch Now</a>
+    </div>
+</div>
+
+<!-- Short Video Card 27 -->
+<div class="bg-white shadow-lg rounded-lg overflow-hidden">
+    <img class="w-full h-48 object-cover" src="./assets/shr 27.png" alt="Short Video Thumbnail 27">
+    <div class="p-4">
+        <h3 class="text-xl font-bold mb-2">Final Circle Victory #shorts</h3>
+        <a href="https://youtube.com/shorts/XXXX" class="text-blue-600 hover:text-blue-800">Watch Now</a>
+    </div>
+</div>
+
+<!-- Short Video Card 28 -->
+<div class="bg-white shadow-lg rounded-lg overflow-hidden">
+    <img class="w-full h-48 object-cover" src="./assets/shr 28.png" alt="Short Video Thumbnail 28">
+    <div class="p-4">
+        <h3 class="text-xl font-bold mb-2">Solo Domination in Free Fire #shorts</h3>
+        <a href="https://youtube.com/shorts/XXXX" class="text-blue-600 hover:text-blue-800">Watch Now</a>
+    </div>
+</div>
+
+<!-- Short Video Card 29 -->
+<div class="bg-white shadow-lg rounded-lg overflow-hidden">
+    <img class="w-full h-48 object-cover" src="./assets/shr 29.png" alt="Short Video Thumbnail 29">
+    <div class="p-4">
+        <h3 class="text-xl font-bold mb-2">No Mercy in Battle #shorts</h3>
+        <a href="https://youtube.com/shorts/XXXX" class="text-blue-600 hover:text-blue-800">Watch Now</a>
+    </div>
+</div>
+
+<!-- Short Video Card 30 -->
+<!-- <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+    <img class="w-full h-48 object-cover" src="./assets/shr 30.png" alt="Short Video Thumbnail 30">
+    <div class="p-4">
+        <h3 class="text-xl font-bold mb-2">Headshots Only Challenge #shorts</h3>
+        <a href="https://youtube.com/shorts/XXXX" class="text-blue-600 hover:text-blue-800">Watch Now</a>
+    </div>
+</div> -->
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="bg-blue-600 text-white py-4">
         <div class="container mx-auto text-center">
-            <p>&copy; 2024 RA CHUSUKUNDHAM FF. All rights reserved.</p>
+            <p>&copy; 2024 Ra Chusukundham FF. All rights reserved.</p>
         </div>
     </footer>
+
 </body>
 </html>

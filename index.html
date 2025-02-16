@@ -1,111 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ra Chusukundham FF</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <style> 
-    .bg-gift {
-        background-image: url('./assets/ff1.gif'); /* Replace with your image URL */
-        background-size: cover;
-        background-position: center;
-    }
-    html, body {
-        height: 100%;
-        margin: 0;
-        display: flex;
-        flex-direction: column;
-    }
-    main {
-        flex: 1;
-    }
-    #thank-you-message {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        background-color: rgba(0, 0, 0, 0.5);
-        color: white;
-        font-size: 2rem;
-        font-weight: bold;
-        z-index: 1000;
-        visibility: hidden;
-    }
-    #thank-you-message.visible {
-        visibility: visible;
-    }
+    <style>
+        .bg-hero {
+            background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url('./assets/ff1.gif');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .video-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
     </style>
 </head>
-<body class="bg-gift bg-gray-100">
-    <header class="bg-blue-600 bg-opacity-100 text-white p-8">
-        <div class="container mx-auto flex flex-col md:flex-row items-center justify-between">
-            <h1 class="text-xl font-bold">Ra Chusukundham FFF</h1>
-            <nav class="flex-grow">
-                <div class="flex justify-center space-x-4">
-                    <a href="index.html" class="text-white">Home</a>
-                    <a href="videos.html" class="text-white">Videos</a>
-                    <a href="contact.html" class="text-white">Contact</a>
-                </div>
+
+<body class="bg-gray-100 text-gray-800">
+
+    <!-- Header -->
+    <header class="bg-blue-600 text-white sticky top-0 z-50">
+        <div class="container mx-auto flex items-center justify-between py-4 px-6">
+            <h1 class="text-3xl font-bold">Ra Chusukundham FF</h1>
+            <nav>
+                <ul class="flex space-x-6 text-lg">
+                    <li><a href="index.html" class="hover:text-yellow-400 transition">Home</a></li>
+                    <li><a href="videos.html" class="hover:text-yellow-400 transition">Videos</a></li>
+                    <li><a href="contact.html" class="hover:text-yellow-400 transition">Contact</a></li>
+                </ul>
             </nav>
         </div>
     </header>
-    <section class="bg-white bg-opacity-90 py-5">
-        <div class="container mx-auto text-center">
-            <h2 class="text-4xl font-bold mb-4">Welcome to Ra Chusukundham FF</h2>
-            <p class="text-xl mb-8">Subscribe for amazing content on FF Gaming!</p>
-            <a href="https://www.youtube.com/@ScorchSquadFF" target="_blank" class="bg-red-600 text-white font-bold py-2 px-4 rounded hover:bg-red-700">
-                Subscribe
+
+    <!-- Hero Section -->
+    <section class="bg-hero h-screen flex items-center justify-center text-center text-white">
+        <div>
+            <h2 class="text-4xl md:text-6xl font-bold mb-6">Welcome to Ra Chusukundham FF</h2>
+            <p class="text-lg md:text-2xl mb-8">Discover epic Free Fire gameplay and exclusive challenges!</p>
+            <a href="https://www.youtube.com/@ScorchSquadFF" target="_blank"
+               class="bg-red-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-red-700 transition text-lg">
+                Subscribe Now
             </a>
         </div>
     </section>
 
-    <!-- Latest Video Title -->
-    <div class="text-center mb-8">
-        <h1 class="text-2xl font-bold"></h1>
-    </div>
-
-    <!-- Video Cards -->
-    <section class="mt-10    bg-opacity-90 py-20">
-        <div class="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div class="bg-white shadow-md rounded-lg overflow-hidden">
-                <img class="w-full h-63 object-cover" src="./assets/WhatsApp Image 2024-06-03 at 11.45.50_eb9c45d4.jpg" alt="Video Thumbnail 1">
+    <!-- Featured Videos -->
+    <main class="container mx-auto py-16 px-6">
+        <h2 class="text-3xl font-bold text-center mb-12">Featured Videos</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Video Card 1 -->
+            <div class="bg-white shadow-lg rounded-lg overflow-hidden video-card">
+                <img src="./assets/WhatsApp Image 2024-06-03 at 11.45.50_eb9c45d4.jpg"
+                     alt="Lone wolf 1v1"
+                     class="w-full h-56 object-cover">
                 <div class="p-4">
-                    <h2 class="text-xl font-bold mb-2">Lone wolf 1v1 5-0 only head🍷🍷🍷🍷🍻🍻🍻🍻</h2>
-                    <p class="text-gray-700"></p>
-                    <a href="https://youtu.be/3C_Qet6mdKw?si=K2H8ObRW6k9aJXeg" class="text-blue-600 mt-4 inline-block">Watch Now</a>
+                    <h3 class="text-xl font-semibold mb-2">Lone wolf 1v1 5-0 only head🍷🍻</h3>
+                    <a href="https://youtu.be/3C_Qet6mdKw?si=K2H8ObRW6k9aJXeg"
+                       class="text-blue-600 hover:text-blue-800 transition">
+                        Watch Now
+                    </a>
                 </div>
             </div>
 
-            <div class="bg-white shadow-md rounded-lg overflow-hidden">
-                <img class="w-full h-63 object-cover" src="./assets/vid 2.jpg" alt="Video Thumbnail 2">
+            <!-- Video Card 2 -->
+            <div class="bg-white shadow-lg rounded-lg overflow-hidden video-card">
+                <img src="./assets/vid 2.jpg"
+                     alt="Youtuber vs Subscriber 1v1"
+                     class="w-full h-56 object-cover">
                 <div class="p-4">
-                    <h2 class="text-xl font-bold mb-2">Youtuber vs subscriber 1v1 challenge for Subscriber #freefire #gaming #garenafreefire #freefiremax</h2>
-                    <p class="text-gray-700"></p>
-                    <a href="https://youtu.be/h9Ps_ncQjxM?si=OI0WuhuffGPcUwqN" class="text-blue-600 mt-4 inline-block">Watch Now</a>
+                    <h3 class="text-xl font-semibold mb-2">
+                        Youtuber vs subscriber 1v1 challenge #freefire #gaming
+                    </h3>
+                    <a href="https://youtu.be/h9Ps_ncQjxM?si=OI0WuhuffGPcUwqN"
+                       class="text-blue-600 hover:text-blue-800 transition">
+                        Watch Now
+                    </a>
                 </div>
             </div>
 
-            <!-- Uncomment and update this block for the third video card
-            <div class="bg-white shadow-md rounded-lg overflow-hidden">
-                <img class="w-full h-48 object-cover" src="[Video Thumbnail URL 3]" alt="Video Thumbnail 3">
-                <div class="p-4">
-                    <h2 class="text-xl font-bold mb-2">Video Title 3</h2>
-                    <p class="text-gray-700">Short description of the video content.</p>
-                </div>
-            </div>
-            -->
+            <!-- Add More Cards Here -->
         </div>
-    </section>
-    <footer class="bg-gray-800 text-white p-4">
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
         <div class="container mx-auto text-center">
-            <p>&copy; 2024 Ra Chusukundham FF. All rights reserved.</p>
+            <p class="text-lg mb-4">&copy; 2024 Ra Chusukundham FF. All rights reserved.</p>
+            <div class="flex justify-center space-x-4">
+                <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook fa-lg"></i></a>
+                <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter fa-lg"></i></a>
+                <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram fa-lg"></i></a>
+                <a href="https://www.youtube.com/@ScorchSquadFF" class="text-gray-400 hover:text-white"><i class="fab fa-youtube fa-lg"></i></a>
+            </div>
         </div>
     </footer>
+
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </body>
+
 </html>
