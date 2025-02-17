@@ -1,9 +1,10 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ra Chusukundham FF - Contact</title>
+    <title>Ra Chusukundham FF </title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
@@ -44,34 +45,6 @@
                     console.error("FAILED...", error);
                     document.getElementById('loading-spinner').classList.add('hidden'); // Hide loading spinner
                     showMessage("Error Sending Feedback", "error");
-                });
-        }
-
-        function sendRoomRequest() {
-            const formData = {
-                username: document.getElementById('username').value,
-                room_email: document.getElementById('room_email').value,
-                uid: document.getElementById('uid').value,
-                match_type: document.getElementById('match_type').value
-            };
-
-            if (!formData.username || !formData.room_email || !formData.uid) {
-                showMessage("Please fill in all fields before submitting.", "error");
-                return;
-            }
-
-            document.getElementById('loading-spinner').classList.remove('hidden'); // Show loading spinner
-
-            emailjs.send("service_rz8q515", "template_o9escnd", formData)
-                .then(function(response) {
-                    console.log("SUCCESS!", response.status, response.text);
-                    document.getElementById('loading-spinner').classList.add('hidden'); // Hide loading spinner
-                    showMessage("Room request sent successfully! Thank you.", "success");
-                })
-                .catch(function(error) {
-                    console.error("FAILED...", error);
-                    document.getElementById('loading-spinner').classList.add('hidden'); // Hide loading spinner
-                    showMessage("Error Sending Room Request", "error");
                 });
         }
 
@@ -133,11 +106,7 @@
 
         <div class="glassmorphism bg-white/80 shadow-lg rounded-lg p-6 max-w-2xl mx-auto">
             <div class="mb-4">
-                <label for="contact-type" class="block text-gray-700 font-medium">Select Type</label>
-                <select id="contact-type" class="w-full mt-2 border-gray-300 rounded-lg bg-white/50" onchange="toggleFormFields()">
-                    <option value="feedback">Feedback</option>
-                    <option value="room">Room</option>
-                </select>
+                <label for="contact-type" class="block font-bold text-black text-2xl text-center">Feedback</label>
             </div>
 
             <div id="feedback-fields">
@@ -157,7 +126,7 @@
                     <button type="button" onclick="sendFeedback()" class="w-full py-3 bg-blue-600 text-white font-bold rounded-lg mt-4">Submit Feedback</button>
                 </form>
             </div>
-
+            
             <div id="message-container" class="hidden mt-4 p-4 rounded-lg text-center"></div>
 
             <div id="loading-spinner" class="fixed inset-0 flex items-center justify-center bg-white/75 hidden">
